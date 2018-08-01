@@ -1,0 +1,32 @@
+{
+    "name": "react-enhanced-cli",
+    "version": "0.0.1",
+    "description": "",
+    "bin": {
+        "rec": "bin/rec"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "react-enhanced",
+        "cli",
+        "react"
+    ],
+    "author": "Zhou Zuchuan",
+    "license": "MIT",
+    "dependencies": {
+        "chalk": "^2.4.1",
+        "cli-table": "^0.3.1",
+        "co": "^4.6.0",
+        "co-prompt": "^1.0.0",
+        "commander": "^2.16.0",
+        "empty-dir": "^1.0.0",
+        "inquirer": "^6.0.0",
+        "left-pad": "^1.3.0",
+        "ora": "^2.1.0",
+        "through2": "^2.0.3",
+        "vinyl-fs": "^3.0.3"
+    },
+    "devDependencies": {}
+}
