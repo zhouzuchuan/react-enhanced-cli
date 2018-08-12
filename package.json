@@ -1,6 +1,6 @@
 {
     "name": "react-enhanced-cli",
-    "version": "0.0.2",
+    "version": "0.0.1",
     "description": ":cat2: A custom cli based on create-react-app",
     "bin": {
         "rec": "bin/rec"
@@ -15,6 +15,14 @@
     ],
     "author": "Zhou Zuchuan",
     "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zhouzuchuan/react-enhanced-cli.git"
+    },
+    "bugs": {
+        "url": "https://github.com/zhouzuchuan/react-enhanced-cli/issues"
+    },
+    "homepage": "https://github.com/zhouzuchuan/react-enhanced-cli#readme",
     "dependencies": {
         "chalk": "^2.4.1",
         "cli-table": "^0.3.1",
