@@ -1,6 +1,6 @@
 # react-enhanced-cli &middot;
 
-基于 create-react-app 定制并且集成 [React-enhanced](https://github.com/zhouzuchuan/react-enhanced) 等三方库的 CLI
+基于 create-react-app 定制并且集成 [React-enhanced](https://github.com/zhouzuchuan/react-enhanced) [ant-design](https://github.com/ant-design/ant-design) 等三方库的 CLI
 
 ## 愿景
 

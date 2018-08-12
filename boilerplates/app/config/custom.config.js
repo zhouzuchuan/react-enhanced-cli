@@ -1,6 +1,6 @@
 const path = require('path')
-
 const paths = require('./paths')
+const glob = require('glob')
 
 function resolve(dir) {
     return path.join(__dirname, '..', dir)
@@ -107,5 +107,21 @@ module.exports = {
                 }
             ]
         }
-    ]
+    ],
+    multiply: {},
+    multiplyEntry() {
+        return glob.sync(paths.appPage + '/*/index.js').reduce(
+            (r, filePath) => ({
+                ...r,
+                [filePath.substring(paths.appPage.length + 1, filePath.lastIndexOf('/'))]: [
+                    require.resolve('./polyfills'),
+                    ...(process.env.NODE_ENV === 'development'
+                        ? [require.resolve('react-dev-utils/webpackHotDevClient')]
+                        : []),
+                    filePath
+                ]
+            }),
+            {}
+        )
+    }
 }

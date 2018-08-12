@@ -13,7 +13,7 @@ class App extends Component {
                     <h1>你好，React-Enhanced</h1>
                 </header>
                 <p>
-                    To get started, edit <code>src/App.js</code> and save to reload.
+                    To get started, edit <code>src/pages/index/App.js</code> and save to reload.
                 </p>
             </div>
         )
