@@ -35,9 +35,7 @@
         "ora": "^2.1.0",
         "through2": "^2.0.3",
         "update-notifier": "^2.5.0",
-        "vinyl-fs": "^3.0.3"
-    },
-    "devDependencies": {
+        "vinyl-fs": "^3.0.3",
         "win-spawn": "^2.0.0"
     },
     "config": {
