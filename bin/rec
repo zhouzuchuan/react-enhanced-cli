@@ -8,6 +8,7 @@ const join = require('path').join;
 const resolve = require('path').resolve;
 const exists = require('fs').existsSync;
 const readFileSync = require('fs').readFileSync;
+const printLogo = require('../src/print-logo')
 
 // Notify update when process exits
 const updater = require('update-notifier');
@@ -17,17 +18,7 @@ updater({ pkg: pkg }).notify({ defer: true });
 if (process.argv.slice(2).join('') === '-v') {
   const pkg = require('../package');
 
-
-                console.log(`
-                
-                 _/_/_/    _/_/_/_/    _/_/_/   
-                _/    _/  _/        _/          
-               _/_/_/    _/_/_/    _/           
-              _/    _/  _/        _/            
-             _/    _/  _/_/_/_/    _/_/_/        
-                
-                `);
-
+  printLogo()
   console.log('react-enhanced-cli version ' + pkg.version);
 
   try {
@@ -76,10 +67,12 @@ function wrap(sp) {
 function printHelp() {
   console.log('  Commands:');
   console.log();
-  console.log('    init           Init a new RE application in the current folder');
   console.log('    create         Creates a new application');
+  console.log('    init           Init a new RE application in the current folder');
   console.log();
   console.log('  All commands can be run with -h (or --help) for more information.')
+
+  printLogo()
 }
 
 
