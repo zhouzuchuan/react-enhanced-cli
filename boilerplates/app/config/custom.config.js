@@ -34,6 +34,9 @@ module.exports = {
                     }
                 },
                 {
+                    loader: require.resolve('postcss-loader')
+                },
+                {
                     loader: require.resolve('less-loader'),
                     options: {
                         strictMath: true,
@@ -45,7 +48,7 @@ module.exports = {
         // less加载器
         {
             test: /\.less$/,
-            include: /styles/,
+            include: /styles|node_modules\/antd/,
             use: [
                 {
                     loader: require.resolve('style-loader')
@@ -56,11 +59,16 @@ module.exports = {
                         importLoaders: 1
                     }
                 },
+                // {
+                //     loader: require.resolve('postcss-loader')
+                // },
                 {
                     loader: require.resolve('less-loader'),
                     options: {
                         strictMath: true,
-                        noIeCompat: true
+                        noIeCompat: true,
+                        javascriptEnabled: true,
+                        modifyVars: require(paths.theme)
                     }
                 }
             ]

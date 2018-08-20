@@ -5,7 +5,7 @@ module.exports = {
         return res.json({
             name: Random.cname(),
             time: Random.date(),
-            chuan: '1'
+            chuan: '3'
         })
     }
 }
