@@ -59,3 +59,7 @@ typings/
 
 
 
+.prettierignore
+.npmignore
+
+*/src/react-enhanced.js

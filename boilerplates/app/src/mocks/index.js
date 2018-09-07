@@ -1,11 +1,18 @@
-const { Random } = require('mockjs')
+const { extractApi } = require('api-manage')
+const api = require('../api')
+const { apiGetPackageList } = extractApi(api)
+
+const { DM } = global
+
 
 module.exports = {
-    ['get /chuan']: (req, res) => {
-        return res.json({
-            name: Random.cname(),
-            time: Random.date(),
-            chuan: '3'
-        })
+    [`GET ${apiGetPackageList}`]: (req, res) => {
+        setTimeout(() => {
+            return res.json({
+                status: 1,
+                message: '成功',
+                result: [DM.packageList, DM.RelypackageList]
+            })
+        }, 1000)
     }
 }

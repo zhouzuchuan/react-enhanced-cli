@@ -9,11 +9,14 @@ function resolve(dir) {
 module.exports = {
     alias: {
         '@': resolve('src'),
-        '@models': resolve('src/models'),
-        '@components': resolve('src/components'),
-        '@containers': resolve('src/containers'),
-        '@styles': resolve('src/styles'),
-        '@mocks': resolve('src/mocks')
+        '@a': resolve('src/assets'),
+        '@m': resolve('src/models'),
+        '@c': resolve('src/components'),
+        '@cn': resolve('src/containers'),
+        '@s': resolve('src/styles'),
+        '@mk': resolve('src/mocks'),
+        '@rw': resolve('src/registerServiceWorker.js'),
+        '@u': resolve('src/utils')
     },
     cssRules: [
         // less加载器 （global-css文件夹不进行css module）

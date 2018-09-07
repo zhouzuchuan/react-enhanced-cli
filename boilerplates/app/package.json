@@ -5,11 +5,13 @@
     "dependencies": {
         "antd": "^3.8.1",
         "axios": "^0.18.0",
+        "immutable": "^3.8.2",
         "lodash": "^4.17.10",
         "react": "^16.4.1",
         "react-dom": "^16.4.1",
-        "react-enhanced": "^0.0.14",
-        "react-router-dom": "^4.3.1"
+        "react-enhanced": "^0.0.18",
+        "react-router-dom": "^4.3.1",
+        "react-router-redux": "^4.0.8"
     },
     "scripts": {
         "start": "nodemon scripts/start.js --watch theme.config.js",
@@ -81,6 +83,7 @@
         "chokidar": "^2.0.4",
         "concurrently": "^3.6.1",
         "css-loader": "0.28.7",
+        "data-mock": "^0.1.7",
         "dotenv": "4.0.0",
         "dotenv-expand": "4.2.0",
         "eslint": "4.10.0",
@@ -110,6 +113,7 @@
         "promise": "8.0.1",
         "raf": "3.4.0",
         "react-dev-utils": "^5.0.1",
+        "redux-devtools-extension": "^2.13.5",
         "resolve": "1.6.0",
         "style-loader": "0.19.0",
         "sw-precache-webpack-plugin": "0.11.4",
