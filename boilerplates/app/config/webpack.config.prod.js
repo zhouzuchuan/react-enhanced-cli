@@ -13,7 +13,7 @@ const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin')
 const paths = require('./paths')
 const getClientEnvironment = require('./env')
 
-const { alias, cssRules, multiplyEntry } = require('./custom.config')
+const { alias, cssRules, multiplyEntry, buildPublicPath } = require('./custom.config')
 
 // Webpack uses `publicPath` to determine where the app is being served from.
 // It requires a trailing slash, or the file assets will get an incorrect path.
@@ -69,7 +69,7 @@ module.exports = {
         filename: 'static/js/[name].[chunkhash:8].js',
         chunkFilename: 'static/js/[name].[chunkhash:8].chunk.js',
         // We inferred the "public path" (such as / or /my-project) from homepage.
-        publicPath: publicPath,
+        publicPath: buildPublicPath,
         // Point sourcemap entries to original disk location (format as URL on Windows)
         devtoolModuleFilenameTemplate: info =>
             path.relative(paths.appSrc, info.absoluteResourcePath).replace(/\\/g, '/')
@@ -164,10 +164,17 @@ module.exports = {
                     // tags. If you use code splitting, however, any async bundles will still
                     // use the "style" loader inside the async code so CSS from them won't be
                     // in the main CSS file.
-                    cssRules.map(({ loader, ...other }) => ({
-                        ...other,
-                        ...ExtractTextPlugin.extract({ ...loader, ...extractTextPluginOptions })
-                    })),
+                    ...cssRules.map(({ use, ...other }) => {
+                        const [styleloader, ...loader] = use
+                        return {
+                            ...other,
+                            loader: ExtractTextPlugin.extract({
+                                use: loader,
+                                fallback: styleloader,
+                                ...extractTextPluginOptions
+                            })
+                        }
+                    }),
                     // {
                     //     test: /\.css$/,
                     //     loader: ExtractTextPlugin.extract(
