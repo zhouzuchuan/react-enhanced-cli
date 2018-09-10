@@ -9,7 +9,7 @@
         "lodash": "^4.17.10",
         "react": "^16.4.1",
         "react-dom": "^16.4.1",
-        "react-enhanced": "^0.0.18",
+        "react-enhanced": "^0.1.0",
         "react-router-dom": "^4.3.1",
         "react-router-redux": "^4.0.8"
     },

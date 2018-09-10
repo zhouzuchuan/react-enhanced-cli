@@ -52,11 +52,7 @@ class App extends Component {
                                 exact
                                 path="/"
                             />
-                            <Route
-                                component={AsyncComponent({
-                                    component: () => import('@cn/About'),
-                                    model: () => import('@m/home')
-                                })}
+                            <Route component={AsyncComponent(() => import('@cn/About'))}
                                 exact
                                 path="/about"
                             />

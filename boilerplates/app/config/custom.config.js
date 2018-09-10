@@ -134,5 +134,6 @@ module.exports = {
             }),
             {}
         )
-    }
+    },
+    buildPublicPath: './'
 }

@@ -6882,9 +6882,9 @@ react-dom@^16.4.1:
     object-assign "^4.1.1"
     prop-types "^15.6.0"
 
-react-enhanced@^0.0.18:
-  version "0.0.18"
-  resolved "https://registry.yarnpkg.com/react-enhanced/-/react-enhanced-0.0.18.tgz#f65481310c1b9bc40f2be46f14c0bbcf4aa6e138"
+react-enhanced@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/react-enhanced/-/react-enhanced-0.1.0.tgz#1eb994137e29e56a8b5dcff4749ca0279ba03142"
   dependencies:
     api-manage "^0.0.5"
     lodash.get "^4.4.2"
