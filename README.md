@@ -39,7 +39,7 @@ rec create rec-app
 cd rec-app
 
 # 启动
-npm run dev
+npm run start
 ```
 
 ## 命令

@@ -1,6 +1,6 @@
 {
     "name": "react-enhanced-cli",
-    "version": "0.1.2",
+    "version": "0.1.3",
     "description": ":cat2: A custom cli based on create-react-app",
     "bin": {
         "rec": "bin/rec"
@@ -32,8 +32,7 @@
         "through2": "^2.0.3",
         "update-notifier": "^2.5.0",
         "vinyl-fs": "^3.0.3",
-        "which": "^1.3.1",
-        "win-spawn": "^2.0.0"
+        "which": "^1.3.1"
     },
     "config": {
         "commitizen": {

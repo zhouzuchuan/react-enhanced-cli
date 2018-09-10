@@ -3,14 +3,20 @@
 
 const program = require('commander');
 const join = require('path').join;
-const spawn = require('win-spawn');
+const { spawn } = require('child_process');
+// const spawn = require('win-spawn');
 const exists = require('fs').existsSync;
 const printLogo = require('../src/print-logo')
 
 // Notify update when process exits
-const updater = require('update-notifier');
+const updaterNotifier = require('update-notifier');
 const pkg = require('../package.json');
-updater({ pkg: pkg }).notify({ defer: true });
+
+updaterNotifier({
+	pkg,
+	updateCheckInterval: 0
+}).notify({ defer: true });
+
 
 if (process.argv.slice(2).join('') === '-v') {
   printLogo()
@@ -34,30 +40,18 @@ function printHelp() {
 }
 
 
-const args = process.argv.slice(3);
 let subcmd = program.args[0];
 
 if (!subcmd) {
   program.help();
 } else {
-  const bin = executable(subcmd);
-  if (bin) {
-    wrap(spawn(bin, args, {stdio: 'inherit', customFds: [0, 1, 2]}));
+  var file = join(__dirname, `rec-${subcmd}`);
+  if (exists(file)) {
+    spawn(file, process.argv.slice(3), {stdio: 'inherit', customFds: [0, 1, 2]}).on('close', function(code) {
+      process.exit(code);
+    });
   } else {
     program.help();
   }
 }
-function wrap(sp) {
-  sp.on('close', function(code) {
-    process.exit(code);
-  });
-}
 
-
-
-function executable(subcmd) {
-  var file = join(__dirname, 'rec-' + subcmd);
-  if (exists(file)) {
-    return file;
-  }
-}
