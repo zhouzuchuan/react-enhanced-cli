@@ -22,6 +22,7 @@
 | [axios](https://github.com/axios/axios)                         | 请求库           |
 | [data-mock](https://github.com/zhouzuchuan/data-mock)           | 数据模拟服务     |
 | [mockjs](https://github.com/nuysoft/Mock)                       | 模拟库           |
+| [classnames](https://github.com/JedWatson/classnames)           | class 条件处理   |
 
     动手能力强的老铁，亦可自定义修改配置（因为是基于官方CLI，一个字“稳”）
 
