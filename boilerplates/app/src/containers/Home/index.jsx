@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect, bindActionCreators, Pull } from 'react-enhanced'
-import logo from '@a/logo.svg'
+import Logo from '@c/Logo'
 import s from './index.less'
 
 @Pull('$service', ['serveGetPackageList'])
@@ -33,9 +33,7 @@ export default class extends React.Component {
         return (
             <div className={s['re-box']}>
                 <header>
-                    <img alt="logo"
-                        src={logo}
-                    />
+                    <Logo />
                     <h1 className="mt10">Welcome to React</h1>
                 </header>
 

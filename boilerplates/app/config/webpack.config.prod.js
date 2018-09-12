@@ -30,6 +30,8 @@ const publicUrl = publicPath.slice(0, -1)
 // Get environment variables to inject into our app.
 const env = getClientEnvironment(publicUrl)
 
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+
 // Assert this just to be safe.
 // Development builds of React are slow and not intended for production.
 if (env.stringified['process.env'].NODE_ENV !== '"production"') {
@@ -48,6 +50,8 @@ const extractTextPluginOptions = shouldUseRelativeAssetPaths
       { publicPath: Array(cssFilename.split('/').length).join('../') }
     : {}
 
+// return
+
 // This is the production configuration.
 // It compiles slowly and is focused on producing a fast and minimal bundle.
 // The development configuration is different and lives in a separate file.
@@ -56,7 +60,8 @@ module.exports = {
     bail: true,
     // We generate sourcemaps in production. This is slow but gives good results.
     // You can exclude the *.map files from the build during deployment.
-    devtool: shouldUseSourceMap ? 'source-map' : false,
+    // devtool: shouldUseSourceMap ? 'source-map' : false,
+    devtool: false,
     // In production, we only want to load the polyfills and the app code.
     // entry: [require.resolve('./polyfills'), paths.appIndexJs],
     entry: multiplyEntry,
@@ -244,6 +249,29 @@ module.exports = {
         ]
     },
     plugins: [
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'common'
+            // minChunks: 3
+            // chunks: ['index']
+            // async: true
+            // children: true
+        }),
+        ...(process.env.REC_ANALYZ === 'true'
+            ? [
+                  new BundleAnalyzerPlugin({
+                      analyzerMode: 'server',
+                      analyzerHost: '127.0.0.1',
+                      analyzerPort: 8889,
+                      reportFilename: 'report.html',
+                      defaultSizes: 'parsed',
+                      openAnalyzer: true,
+                      generateStatsFile: false,
+                      statsFilename: 'stats.json',
+                      statsOptions: null,
+                      logLevel: 'info'
+                  })
+              ]
+            : []),
         // Makes some environment variables available in index.html.
         // The public URL is available as %PUBLIC_URL% in index.html, e.g.:
         // <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">

@@ -132,7 +132,11 @@ module.exports = {
                     filePath
                 ]
             }),
-            {}
+            process.env.REC_ANALYZ === 'true'
+                ? {
+                      common: paths.appSrc + '/common.js'
+                  }
+                : {}
         )
     },
     buildPublicPath: './'
