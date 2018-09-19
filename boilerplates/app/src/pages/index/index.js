@@ -2,6 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { init } from 'react-enhanced'
 import { HashRouter as Router } from 'react-router-dom'
+import { LocaleProvider } from 'antd'
+import zhCN from 'antd/lib/locale-provider/zh_CN'
 import registerServiceWorker from '@rw'
 import App from './App'
 import apiList from '@/api'
@@ -20,7 +22,9 @@ const { Provider } = init({
 ReactDOM.render(
     <Provider>
         <Router>
-            <App />
+            <LocaleProvider locale={zhCN}>
+                <App />
+            </LocaleProvider>
         </Router>
     </Provider>,
     document.getElementById('root')
