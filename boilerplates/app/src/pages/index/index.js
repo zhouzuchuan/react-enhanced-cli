@@ -7,16 +7,19 @@ import zhCN from 'antd/lib/locale-provider/zh_CN'
 import registerServiceWorker from '@rw'
 import App from './App'
 import apiList from '@/api'
+
 // 重置样式
 import 'normalize.css'
-import '@s/reset.css'
-import '@s/index.less'
+import '@s/commonly.less'
 
 const { Provider } = init({
     warehouse: [], // 仓库名
     resultLimit: 'result',
-    loading: 0,
-    apiList
+    api: {
+        // 指定api挂载的仓库名
+        name: '$service',
+        list: apiList
+    }
 })
 
 ReactDOM.render(

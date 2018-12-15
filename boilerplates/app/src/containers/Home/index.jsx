@@ -1,30 +1,26 @@
 import React from 'react'
-import { connect, bindActionCreators, Pull } from 'react-enhanced'
+import { connect, bindActionCreators, component } from 'react-enhanced'
 import Logo from '@c/Logo'
 import s from './index.less'
 
-@Pull('$service', ['serveGetPackageList'])
+const { Loading } = component
+
+export default
 @connect(
-    ({ home }, a, b, c) => {
-        return {
-            packageList: home.get('packageList')
-        }
-    },
-    (dispatch, { serveGetPackageList }) => {
-        return bindActionCreators(
+    ({ home }) => ({
+        packageList: home.get('packageList')
+    }),
+    dispatch =>
+        bindActionCreators(
             {
                 getPackageList: () => ({
-                    request: serveGetPackageList,
-                    did: 'home/dataGroup'
+                    type: 'home/getPackageList'
                 })
             },
             dispatch
         )
-    }
 )
-export default class extends React.Component {
-    static displayName = 'HomePage'
-
+class HomePage extends React.Component {
     componentDidMount() {
         this.props.getPackageList()
     }
@@ -51,25 +47,29 @@ export default class extends React.Component {
                     To get started, edit <code>src/pages/index/App.js</code> and save to reload.
                 </p>
 
-                {packageList.map((item, index) => (
-                    <div className={s['package-list']}
-                        key={index}
-                    >
-                        <h3>{item.get('name')}</h3>
-                        <ul className="lay-list">
-                            {item.get('list').map((v, i) => (
-                                <li key={i}>
-                                    <a className={s.link}
-                                        href={v.get('src')}
-                                        target="_blank"
-                                    >
-                                        {v.get('name')}
-                                    </a>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                ))}
+                <Loading className="mt30"
+                    include="serveGetPackageList"
+                >
+                    {packageList.map((item, index) => (
+                        <div className={s['package-list']}
+                            key={index}
+                        >
+                            <h3>{item.get('name')}</h3>
+                            <ul className="lay-list">
+                                {item.get('list').map((v, i) => (
+                                    <li key={i}>
+                                        <a className={s.link}
+                                            href={v.get('src')}
+                                            target="_blank"
+                                        >
+                                            {v.get('name')}
+                                        </a>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    ))}
+                </Loading>
             </div>
         )
     }

@@ -1,5 +1,7 @@
 // 默认数据储存
 
+// const { Random } = require('mockjs')
+
 module.exports = {
     packageList: [
         {
@@ -31,7 +33,7 @@ module.exports = {
             src: 'https://github.com/facebook/immutable-js'
         }
     ],
-    RelypackageList: [
+    relypackageList: [
         {
             name: 'react',
             src: 'https://github.com/facebook/react'
@@ -51,6 +53,10 @@ module.exports = {
         {
             name: 'redux-saga',
             src: 'https://github.com/redux-saga/redux-saga'
+        },
+        {
+            name: 'redux-observable',
+            src: 'https://github.com/redux-observable/redux-observable'
         },
         {
             name: 'mockjs',

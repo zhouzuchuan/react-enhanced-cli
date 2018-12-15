@@ -1,16 +1,15 @@
 {
-    "presets": ["react-app", "react"],
+    "presets": ["react-app"],
     "plugins": [
         "syntax-dynamic-import",
-        "transform-decorators-legacy",
-        "transform-react-jsx",
-        "transform-runtime",
+        ["@babel/plugin-proposal-decorators", { "legacy": true }],
+        "lodash",
         [
             "import",
             {
                 "libraryName": "antd",
                 "libraryDirectory": "es",
-                "style": true
+                "style": "css"
             }
         ]
     ]

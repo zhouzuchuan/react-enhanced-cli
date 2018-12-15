@@ -1,7 +1,6 @@
-const server = ''
+const { bindApi } = require('api-manage')
 
-module.exports = {
-    get: {
-        apiGetPackageList: `${server}/packageList`
-    }
-}
+module.exports = bindApi([require('./home')], {
+    // 目录清单注入server
+    server: ''
+})

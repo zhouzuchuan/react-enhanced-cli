@@ -8,23 +8,35 @@
 
 集成了众多优秀的三方库，加持页面功能实现、开箱即用
 
-| 库名                                                            | 描述             |
-| --------------------------------------------------------------- | ---------------- |
-| [react](https://github.com/facebook/react)                      | 核心             |
-| [react-enhanced](https://github.com/zhouzuchuan/react-enhanced) | 增强器框架       |
-| [ant-design](https://github.com/ant-design/ant-design)          | UI 框架          |
-| [react-redux](https://github.com/reduxjs/react-redux)           | 状态管理         |
-| [less](https://github.com/less/less.js)                         | 动态样式语言     |
-| [react-router](https://github.com/ReactTraining/react-router)   | 路由             |
-| [lodash](https://github.com/lodash/lodash)                      | 工具库           |
-| [immutable](https://github.com/facebook/immutable-js)           | 不可变数据操作库 |
-| [api-manage](https://github.com/zhouzuchuan/api-manage)         | api 服务解决方案 |
-| [axios](https://github.com/axios/axios)                         | 请求库           |
-| [data-mock](https://github.com/zhouzuchuan/data-mock)           | 数据模拟服务     |
-| [mockjs](https://github.com/nuysoft/Mock)                       | 模拟库           |
-| [classnames](https://github.com/JedWatson/classnames)           | class 条件处理   |
+| 库名                                                                     | 描述                   |
+| ------------------------------------------------------------------------ | ---------------------- |
+| [react](https://github.com/facebook/react)                               | 核心                   |
+| [react-enhanced](https://github.com/zhouzuchuan/react-enhanced)          | 增强器框架             |
+| [rxjs](https://github.com/Reactive-Extensions/RxJS)                      | 响应式编程             |
+| [redux-observable](https://github.com/redux-observable/redux-observable) | 响应式编程(副作用管理) |
+| [ant-design](https://github.com/ant-design/ant-design)                   | UI 框架                |
+| [react-redux](https://github.com/reduxjs/react-redux)                    | 状态管理               |
+| [less](https://github.com/less/less.js)                                  | 动态样式语言           |
+| [react-router](https://github.com/ReactTraining/react-router)            | 路由                   |
+| [lodash](https://github.com/lodash/lodash)                               | 工具库                 |
+| [immutable](https://github.com/facebook/immutable-js)                    | 不可变数据操作库       |
+| [api-manage](https://github.com/zhouzuchuan/api-manage)                  | api 服务解决方案       |
+| [axios](https://github.com/axios/axios)                                  | 请求库                 |
+| [data-mock](https://github.com/zhouzuchuan/data-mock)                    | 数据模拟服务           |
+| [mockjs](https://github.com/nuysoft/Mock)                                | 模拟库                 |
+| [classnames](https://github.com/JedWatson/classnames)                    | class 条件处理         |
 
-    动手能力强的老铁，亦可自定义修改配置（因为是基于官方CLI，一个字“稳”）
+集成了代码质量管理工具 [eslint](https://github.com/eslint/eslint) 和 [stylelint](https://github.com/stylelint/stylelint)
+
+建议您的编辑器中安装相应的插件，在生产环境中关闭代码检测，打包部署则开启，在开发过程中通过编辑器的插件更佳方便开发以及质量管理
+
+CLI 默认是采用这种方式开发，当然你也可以设置全关闭，具体配置请查看文件 `confing/custom.config.js`
+
+相应的检测规则配置分别在 `.eslintrc` 和 `.stylelintrc.json`
+
+```
+PS: 动手能力强的老铁，亦可自定义修改配置（因为是基于官方 CLI，一个字“稳”）
+```
 
 ## 使用
 
@@ -106,7 +118,9 @@ src
 │
 ```
 
-    src下任意的 styles 文件夹里面的样式 如：less/css，都不会经过css modules处理
+```
+PS: src下任意的 styles 文件夹里面的样式 如：less/css，都不会经过css modules处理
+```
 
 ## License
 
