@@ -56,6 +56,8 @@ npm run start
 
 ## 命令
 
+### Javascript
+
 新建 `rec-app` 文件夹并初始化工程
 
 ```bash
@@ -74,6 +76,30 @@ rec init rec-app
 
 # 初始化（不下载资源）
 rec init rec-app --no-install
+```
+
+### Typescript
+
+如果要生成 `Typescript` 工程 需要在命令上添加 `--ts`
+
+新建 `rec-app-ts` 文件夹并初始化工程
+
+```bash
+# 初始化并下载资源
+rec create rec-app-ts --ts
+
+# 初始化（不下载资源）
+rec init rec-app-ts --ts --no-install
+```
+
+在 `rec-app-ts` 文件夹中初始化工程
+
+```bash
+# 初始化并下载资源
+rec init rec-app-ts --ts
+
+# 初始化（不下载资源）
+rec init rec-app --ts --no-install
 ```
 
 ## 文件结构

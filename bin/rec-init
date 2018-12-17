@@ -3,7 +3,8 @@
 const program = require('commander');
 
 program
-  .option('--no-install', 'Install dependencies after boilerplate, default: true')
-  .parse(process.argv);
+    .option('--no-install', 'Install dependencies after boilerplate, default: true')
+    .option('--ts', 'create typescript app')
+    .parse(process.argv);
 
 require('../src/init')(program);

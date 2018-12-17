@@ -13,9 +13,7 @@
         "react-app-polyfill": "^0.1.3",
         "react-dom": "^16.6.3",
         "react-enhanced": "^1.0.0-alpha.1",
-        "react-redux": "^5.1.1",
         "react-router-dom": "^4.3.1",
-        "redux": "^4.0.1",
         "redux-observable": "^1.0.0"
     },
     "scripts": {

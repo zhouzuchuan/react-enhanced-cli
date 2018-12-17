@@ -60,5 +60,8 @@ typings/
 .gitignore
 .prettierignore
 *.lock
+yarn.lock
+
+boilerplates/**/node_modules/*
 
 */src/react-enhanced.js

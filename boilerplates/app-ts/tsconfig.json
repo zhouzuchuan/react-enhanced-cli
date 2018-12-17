@@ -1,0 +1,45 @@
+{
+    "compilerOptions": {
+        "baseUrl": "./",
+        "paths": {
+            "@a/*": ["src/assets/*"],
+            "@m/*": ["src/models/*"],
+            "@c/*": ["src/components/*"],
+            "@cn/*": ["src/containers/*"],
+            "@s/*": ["src/styles/*"],
+            "@mk/*": ["src/mocks/*"],
+            "@u/*": ["src/utils/*"],
+            "@rw": ["src/registerServiceWorker.ts"],
+            "@/*": ["src/*"]
+        },
+        "outDir": "build/dist",
+        "module": "esnext",
+        "target": "es5",
+        "lib": ["es6", "es7", "esnext", "dom"],
+        "sourceMap": true,
+        "allowJs": true,
+        "jsx": "react",
+        "moduleResolution": "node",
+        "rootDir": "src",
+        "forceConsistentCasingInFileNames": true,
+        "noImplicitReturns": true,
+        "noImplicitThis": true,
+        "noImplicitAny": true,
+        "importHelpers": true,
+        "strictNullChecks": true,
+        "suppressImplicitAnyIndexErrors": true,
+        "noUnusedLocals": true,
+        "experimentalDecorators": true
+    },
+    "exclude": [
+        "node_modules",
+        "build",
+        "scripts",
+        "acceptance-tests",
+        "webpack",
+        "jest",
+        "src/setupTests.ts",
+        "src/react-enhanced.js",
+        "src/**/*.js"
+    ]
+}

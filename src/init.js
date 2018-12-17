@@ -20,11 +20,12 @@ function success(message) {
     console.error(chalk.green(message));
 }
 
-function init(aaa) {
-    const { demo, install } = aaa;
+function init(params) {
+    const { ts = false, install } = params;
 
-    // const type = demo ? 'demo' : 'app';
-    const cwd = join(__dirname, '../boilerplates', 'app');
+    const tplName = ts ? 'app-ts' : 'app';
+
+    const cwd = join(__dirname, '../boilerplates', tplName);
     const dest = process.cwd();
     const projectName = basename(dest);
 

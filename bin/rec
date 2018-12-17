@@ -6,52 +6,50 @@ const join = require('path').join;
 const { spawn } = require('child_process');
 // const spawn = require('win-spawn');
 const exists = require('fs').existsSync;
-const printLogo = require('../src/print-logo')
+const printLogo = require('../src/print-logo');
 
 // Notify update when process exits
 const updaterNotifier = require('update-notifier');
 const pkg = require('../package.json');
 
 updaterNotifier({
-	pkg,
-	updateCheckInterval: 0
+    pkg,
+    updateCheckInterval: 0
 }).notify({ defer: true });
 
-
 if (process.argv.slice(2).join('') === '-v') {
-  printLogo()
-  return;
+    printLogo();
+    return;
 }
 
 program
-  .usage('<command> [options]')
-  .on('--help', printHelp)
-  .parse(process.argv);
+    .usage('<command> [options]')
+    .on('--help', printHelp)
+    .parse(process.argv);
 
 function printHelp() {
-  console.log('  Commands:');
-  console.log();
-  console.log('    create         Creates a new application');
-  console.log('    init           Init a new RE application in the current folder');
-  console.log();
-  console.log('  All commands can be run with -h (or --help) for more information.')
+    console.log('  Commands:');
+    console.log();
+    console.log('    create         Creates a new application');
+    console.log('    init           Init a new RE application in the current folder');
+    console.log('       --ts        Creates a new application of typescript');
+    console.log();
+    console.log('  All commands can be run with -h (or --help) for more information.');
 
-  printLogo()
+    printLogo();
 }
-
 
 let subcmd = program.args[0];
 
 if (!subcmd) {
-  program.help();
-} else {
-  var file = join(__dirname, `rec-${subcmd}`);
-  if (exists(file)) {
-    spawn(file, process.argv.slice(3), {stdio: 'inherit', customFds: [0, 1, 2]}).on('close', function(code) {
-      process.exit(code);
-    });
-  } else {
     program.help();
-  }
+} else {
+    var file = join(__dirname, `rec-${subcmd}`);
+    if (exists(file)) {
+        spawn(file, process.argv.slice(3), { stdio: 'inherit', customFds: [0, 1, 2] }).on('close', function(code) {
+            process.exit(code);
+        });
+    } else {
+        program.help();
+    }
 }
-

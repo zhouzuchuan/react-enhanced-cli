@@ -33,16 +33,6 @@ const getStyleLoaders = (cssOptions, preProcessor) => {
         {
             loader: require.resolve('postcss-loader'),
             options: {
-                ident: 'postcss',
-                plugins: () => [
-                    require('postcss-flexbugs-fixes'),
-                    require('postcss-preset-env')({
-                        autoprefixer: {
-                            flexbox: 'no-2009'
-                        },
-                        stage: 3
-                    })
-                ],
                 ...(!isEnvDev ? { sourceMap: shouldUseSourceMap } : {})
             }
         }
