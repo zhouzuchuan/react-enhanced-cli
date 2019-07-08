@@ -1,5 +1,11 @@
 # react-enhanced-cli [![download](https://img.shields.io/npm/dm/react-enhanced-cli.svg)](https://www.npmjs.com/search?q=react-enhanced-cli) [![npm](https://img.shields.io/npm/v/react-enhanced-cli.svg)](https://www.npmjs.com/search?q=react-enhanced-cli) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/zhouzuchuan/react-enhanced-cli/master/LICENSE)
 
+
+## 为了更好的兼容 create-react-app 的更新，该项目停止维护，用一新的[项目](https://github.com/zhouzuchuan/react-typescript-boilerplate)来代替（该项目不再 `eject` 配置）
+
+
+
+
 ## 他是什么
 
 基于 `React` 官方 CLI 工具 [create-react-app](https://github.com/facebook/create-react-app)，为 `react-enhanced` 定制的开箱即用 CLI
